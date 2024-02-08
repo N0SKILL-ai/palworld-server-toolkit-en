@@ -1,176 +1,181 @@
 # Palworld Server Toolkit
 
-### 幻兽帕鲁服务端工具包
+### Tools for Palworld servers
 
 <p align="center">
-   <strong>简体中文</strong> | <a href="/README.en.md">English</a>
+   <a href="/README.md">简体中文</a> | <strong>English</strong>
 </p>
+
 
 <p align='center'>
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/magicbear/palworld-server-toolkit?style=for-the-badge">&nbsp;&nbsp;
 <img alt="Python" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">&nbsp;&nbsp;
 </p>
 
-世界上最高速的帕鲁服务器存档编辑器, 1.1秒打开对应转换时间1分40秒的约1.5GB的JSON。
+The world fastest PalWorld server save editor, parse Level.sav in 1.1s for JSON about 1.5GB, and for convert.py time spent in 1m40s.
 
-- 这个工具包可用于在 Palworld 世界间转移角色，允许朋友们将他们的角色转移到彼此的服务器上，而不会失去任何进度。
+- This toolkit transfers character between worlds in Palworld, which allows friends to transfer their characters to each other's server without losing one's progress.
 
-- 亦可以用于编辑玩家所持有的帕鲁、参数、持有物品、金钱等等数据。
-
-- 亦可以移动玩家的公会、删除营地、删除玩家
-
+- Also can be edit the Player's Item, Pals, Guilds, Money, etc...
 
 ---
 
 - [Palworld Server Toolkit](#palworld-server-toolkit)
-  - [如何安装](#直接运行)
-  - [找到存档文件](#faq)
-  - [操作示例](#操作示例)
-  - [跨服务器迁移玩家数据](#跨服务器迁移玩家数据)
-  - [服务器存档转本地](#服务器存档转本地)
-  - [感谢](#感谢)
-  - [视频操作教程 - 哔哩哔哩](https://www.bilibili.com/video/BV1s2421A7jX/)
+  - [How to use install](#Binaries)
+  - [Where to find the save-files](#faq)
+  - [An example](#operate-sample)
+  - [Migrate Data Between Server](#migrate-difference-server-to-single-server)
+  - [Migrate server to local](#migrate-server-to-local)
+  - [Credits](#acknowledgements)
+  - [Video Operate - Chinese on bilibili](https://www.bilibili.com/video/BV1s2421A7jX/)
 
 
 ## GUI
 
-![](./docs/img/GUI.png)
+![](./docs/img/GUI.png)	
 
-## 直接运行
+## Binaries
 
-访问 [Release Pages](https://github.com/magicbear/palworld-server-toolkit/releases) 下载运行即可。
+Visit [Release Pages](https://github.com/magicbear/palworld-server-toolkit/releases) to download and run.
 
-## 手动安装
+## Manual Install
 
-1. Python 3.9或以上版本.
-    - Windows用户: 可从 [Microsoft Store下载Python 3.12](https://apps.microsoft.com/detail/9NCVDN91XZQP) or [python.org](https://www.python.org/)
+1. Python 3.9 or newer.
+    - Windows users: You can install [Python 3.12 from the Microsoft Store](https://apps.microsoft.com/detail/9NCVDN91XZQP) or from [python.org](https://www.python.org/)
 
-2. 安装 `pip` 包管理器
+2. Install `pip` Package manager
 	- For Linux users: `python -m ensurepip --upgrade`
 	- For Windows users: `py -m ensurepip --upgrade`
 
-3. 使用 `pip install palworld-server-toolkit` 安装
+3. Use pip to install `pip install palworld-server-toolkit` or `python -m pip install palworld-server-toolkit`
 
-## 使用源码前置安装需求
+## Source Code Prerequisites
 
-1. Python 3.9或以上版本.
-    - Windows用户: 可从 [Microsoft Store下载Python 3.12](https://apps.microsoft.com/detail/9NCVDN91XZQP) or [python.org](https://www.python.org/)
+1. Python 3.9 or newer.
+    - Windows users: You can install [Python 3.12 from the Microsoft Store](https://apps.microsoft.com/detail/9NCVDN91XZQP) or from [python.org](https://www.python.org/)
 
-2. 使用 `pip install palworld-save-tools` 和 `git submodule update --init --recursive` 或 下载 [https://github.com/cheahjs/palworld-save-tools](https://github.com/cheahjs/palworld-save-tools) 并放置 `palworld-save-tools` 内容至 `save_tools` 目录下
+2. Use `pip install palworld-save-tools` and `git submodule update --init --recursive` or Download [https://github.com/cheahjs/palworld-save-tools](https://github.com/cheahjs/palworld-save-tools) and put `palworld-save-tools` contents to `save_tools` directory
 
-3. Windows 用户建议使用 `Windows Terminal` 取代 `cmd`，否则不显示色彩
+3. Windows User present use `Windows Terminal` instance of `cmd` for color
 
-## 问题交流
+## Question?
 
-QQ群 139107098
+[Discord](https://discord.com/channels/1200798336916144188/1203683616488685698)
+
 
 ---
+
 ## palworld-save-editor
 
-清理捕捉日志，改名，合并不同服务器玩家，删除玩家，迁移坏档等工具包
+This tools is for cleanup the unreference item, rename the player name, migrate player and delete the player.
 
 > [!CAUTION]
 > 
-> :warning: 此工具是实验性的。 小心数据丢失并 ***务必*** 进行备份。
+> :warning: This tool is experimental. Be careful of data loss and *always* make a backup.
 
 
 > [!NOTE]
 > 
-> 未加-o参数默认保存文件为`Level_fixed.sav`
->
-> 使用源码版本 以下命令 ` -m palworld_server_toolkit.editor` 部份 修改为 `palworld_server_toolkit/editor.py` 运行即可
+> Without -o params, default save file is `Level_fixed.sav`
+> 
+> Use source code version just replace below command ` -m palworld_server_toolkit.editor` to `palworld_server_toolkit/editor.py`
+
+- For cleaning the capture log in guild, use the follow command `python -m palworld_server_toolkit.editor --fix-missing --fix-capture Level.sav`
+
+- For GUI to modify `Level.sav` file - `python -i -m palworld_server_toolkit.editor -g -o Level.sav Level.sav`
+
+- For modifiy the `Level.sav` file, use the follow command
+`python -i -m palworld_server_toolkit.editor -o Level.sav Level.sav`
+
+	- `ShowPlayers()` - List the Players
+	- `FixMissing()` - Remove missing player instance
+	- `FixCaptureLog()` - Remove invalid caputre log in guild
+	- `FixDuplicateUser()` - Remove duplicated user data
+	- `ShowGuild()` - List the Guild and members
+	- `BindGuildInstanceId(uid,instance_id)` - Update Guild binding instance for user
+	- `RenamePlayer(uid,new_name)` - Rename player to new_name
+	- `DeletePlayer(uid,InstanceId=None, dry_run=False)` - Wipe player data from save InstanceId: delete specified InstanceId
+	- `DeleteGuild(group_id)` - Delete Guild
+	- `DeleteBaseCamp(base_id)` - Delete Base Camp
+	- `EditPlayer(uid)` - Allocate player base meta data to variable `player`
+	- `MoveToGuild(uid,guild_id)` - Move player to guild `guild_id`
+	- `OpenBackup(filename)` - Open Backup Level.sav file and assign to `backup_wsd`
+	- `MigratePlayer(old_uid,new_uid)` - Migrate the player from old PlayerUId to new PlayerUId
+	- `CopyPlayer(old_uid,new_uid, backup_wsd)` - Copy the player from old PlayerUId to new PlayerUId `backup_wsd` is the OpenBackup file, `wsd` is current file
+	- `Save()` - Save the file and exit
 
 
-- 清理捕捉日志及不存在玩家数据 - `python -m palworld_server_toolkit.editor --fix-missing --fix-capture Level.sav`
+### Operate Sample
 
-- 使用GUI修改 `Level.sav` 文件 - `python -i -m palworld_server_toolkit.editor -g -o Level.sav Level.sav`
-
-- 修改 `Level.sav` 文件 - `python -m palworld_server_toolkit.editor -i -o Level.sav Level.sav`
-
-	- `ShowPlayers()` - 列出玩家
-	- `FixMissing()` - 删除未引用玩家数据
-	- `FixCaptureLog()` - 删除多余捕捉日志
-	- `FixDuplicateUser()` - 删除多余用户数据
-	- `ShowGuild()` - 列出公会及成员列表
-	- `BindGuildInstanceId(uid,instance_id)` - 修改公会成员绑定ID
-	- `RenamePlayer(uid,new_name)` - 修改玩家名字为 `new_name`
-	- `DeletePlayer(uid,InstanceId=None, dry_run=False)` - 删除玩家数据 `InstanceId: 删除指定InstanceId`
-	- `DeleteGuild(group_id)` - 删除公会
-	- `DeleteBaseCamp(base_id)` - 删除基地
-	- `EditPlayer(uid)` - 快速指定玩家数据至变量`player`
-	- `MoveToGuild(uid,guild_id)` - 移动玩家至公会`guild_id`
-	- `OpenBackup(filename)` - 打开备份`Level.sav`文件并指向变量`backup_wsd`
-	- `MigratePlayer(old_uid,new_uid)` - 从`old_uid`向`new_uid`迁移玩家数据
-	- `CopyPlayer(old_uid,new_uid, backup_wsd)` - 复制玩家数据 `backup_wsd` 为OpenBackup备份文件 `wsd`为当前主文件
-	- `Save()` - 保存修改并退出
-
-### 操作示例
 > [!IMPORTANT]
 > 
-> 以下操作均需先退出服务端
+> ALL OPERATE REQUIRE to STOP SERVER
 > 
-> 最后均为把 `Level_fixed.sav` 替换至 `Level.sav` 并启动服务端
+> Finally is replace `Level_fixed.sav` to `Level.sav` and start Palworld Server.
 
-#### 跨服务器迁移玩家数据
 
-- 提前工作
+#### Migrate difference server to single server
 
-	1. 复制旧服务器 `Level.sav` 至 `SaveGames/0/<Server ID>/Old-Level.sav`
-	1. 复制旧服务器所有需迁移玩家 `Players/xxxxxxxx000000000000000000000000.sav` 至 `SaveGames/0/<Server ID>/Players/xxxxxxxx000000000000000000000000.sav`
+- Preparing
 
-- GUI模式操作
+	1. Copy old server `Level.sav` to `SaveGames/0/<Server ID>/Old-Level.sav`
+	2. Copy old server `Players/xxxxxxxx000000000000000000000000.sav` to `SaveGames/0/<Server ID>/Players/xxxxxxxx000000000000000000000000.sav`
 
-	1. `Source Player Data Source` 选择 `Backup File`
-	2. 点击 `Open File` 选择旧服务器存档 `Old-Level.sav`
-	3. `Source Player` 选择要迁移的旧玩家
-	4. `Target Player` 选择要被替换的玩家（如果目标玩家ID不变，可从`Source Player`拷贝UUID)
-	5. 点击 `Copy Player`
-	6. 点击 `Save & Exit`
-	7. 替换文件 `Level_fixed.sav` 到 `Level.sav`
+- Operate By GUI
 
-- 命令模式操作
-	1. 使用编辑模式运行 `python -i -m palworld_server_toolkit.editor Level.sav`
-	1. 使用以下命令 并所有需迁移玩家执行`CopyPlayer`
-		> :warning: UUID 可相同，数据自`backup_wsd`拷贝
+	1. Item `Source Player Data Source` Select `Backup File`
+	2. Click `Open File` to load old server `Old-Level.sav`
+	3. Item `Source Player` to select player that you want to migrate
+	4. Item `Target Player` to select player that will be replaced. (if target player ID is the same, can copy the UUID from `Source Player`)
+	5. Click `Copy Player`
+	6. Click `Save & Exit`
+	7. Replace `Level_fixed.sav` to `Level.sav`, enjoy it.
+
+#### Migrate server to local
+
+- Operate By GUI
+
+	1. Item `Source Player` to select player that you want to migrate
+	2. Item `Target Player` paste `00000000-0000-0000-0000-000000000001`
+	3. Click `Migrate Player`
+	4. Click `Save & Exit`
+	5. Replace `Level_fixed.sav` to `Level.sav`, enjoy it.
+
+
+#### Other Migrate
+
+- Operate By Command Line
+
+	3. Use interactive mode `python -i -m palworld_server_toolkit.editor Level.sav`
+	4. Execute following command and run `CopyPlayer` for each migrate player
+		> :warning: UUID can be the same, the user data will be copy from `backup_wsd`
 		```
 		OpenBackup("Old-Level.sav")
 		CopyPlayer("xxxxxxxx-0000-0000-0000-000000000000", "xxxxxxxx-0000-0000-0000-000000000000", backup_wsd)
 		Save()
 		```
-	5. \(Optional) 最后删除旧 `xxxxxxxx000000000000000000000001.sav`, 
+	5. \(Optional) remove all the old `xxxxxxxx000000000000000000000000.sav` and `Old-Level.sav`
 
-### 服务器存档转本地
+- Migrate Local save to server:
 
-- GUI模式操作
-
-	1. `Source Player` 选择要迁移的旧玩家
-	2. `Target Player` 输入 `00000000-0000-0000-0000-000000000001`
-	3. 点击 `Migrate Player`
-	4. 点击 `Save & Exit`
-	5. 替换文件 `Level_fixed.sav` 到 `Level.sav`
-
-### 其他迁移示例
-
-- 本地存档迁移至服务器示例
-
-	1. 复制本地 `Level.sav` 至 `SaveGames/0/<Server ID>/Old-Level.sav`
-	> 本地存档通常在
+	1. Copy local save `Level.sav` to `SaveGames/0/<Server ID>/Old-Level.sav`
+	> For co-op saves, they are usually at
 	`C:\Users\<username>\AppData\Local\Pal\Saved\SaveGames\<SteamID>\<World Folder>`
 
-	2. 复制本地 `Players/00000000000000000000000000000001.sav` 至 `SaveGames/0/<Server ID>/Players/00000000000000000000000000000001.sav`
-	3. 使用编辑模式运行 `python -i -m palworld_server_toolkit.editor Level.sav`
-	4. 使用以下命令
+	1. Copy local `Players/00000000000000000000000000000001.sav` to `SaveGames/0/<Server ID>/Players/00000000000000000000000000000001.sav`
+	1. Use interactive mode `python -i -m palworld_server_toolkit.editor Level.sav`
+	1. Execute following command 
 		```
 		OpenBackup("Old-Level.sav")
 		CopyPlayer("00000000-0000-0000-0000-000000000001", "xxxxxxxx-0000-0000-0000-000000000000", backup_wsd)
 		Save()
 		```
-	5. \(Optional) 最后删除旧 `00000000000000000000000000000001.sav` 和 `Old-Level.sav`
+	5. remove `00000000000000000000000000000001.sav` and `Old-Level.sav`
 
-- 迁移用户示例
+- Migrate User
 
-	1. 使用编辑模式运行 `python -i -m palworld_server_toolkit.editor Level.sav`
-	2. 使用以下命令 
+	1. Use interactive mode `python -i -m palworld_server_toolkit.editor Level.sav`
+	1. Execute following command 
 		```
 		MigratePlayer("xxxxxxxx-0000-0000-0000-000000000000","yyyyyyyy-0000-0000-0000-000000000000")
 		Save()
@@ -178,11 +183,12 @@ QQ群 139107098
 
 
 ---
+
 ## palworld-player-list
 ```
 usage: palworld-playey-list [-h] [--host HOST] [--port PORT] [--password PASSWORD] [filename]
 
-用于列出服务器Players目录中的玩家名字，PlayerUId，Steam ID
+List player on the Players Folder
 
 positional arguments:
   filename              Filename of the player sav
@@ -191,34 +197,37 @@ options:
   -h, --help            show this help message and exit
   --host HOST, -H HOST  Host for PalWorld Server RCON
   --port PORT, -P PORT  PalWorld Server RCON Port
-  --password PASSWORD, -p PASSWORD  RCON密码
+  --password PASSWORD, -p PASSWORD
+                        RCON Password
 ```
 
-
-- 列出玩家 - 在工作目录 `/PalSaved/SaveGames/0/<server id>/Players` 中运行 `python3 list.py`
-- 玩家详细 - `python3 list.py <PLAYER HEX UID>`
+- List player - `python3 list.py` in working directory `/PalSaved/SaveGames/0/<server id>/Players`
+- Check player detail - `python3 list.py <PLAYER HEX UID>`
 
 
 ---
 
 ## palworld-server-taskset
-
-把服务端绑定至CPU性能核 (Linux only)
+Tools for set cpu affinity to CPU performance core (Linux only)
 
 ---
 
-# FAQ
+## FAQ
 
-- 复制玩家为将角色及其所有队伍和终端中的伙伴、角色身上的物品以及进度转移，但不会转移任何地图对象、原世界中箱子里的物品以及基地中工作的伙伴。（如果你想将它们一起转移，请将它们移动到身上/终端中）
-- 对于合作模式的存档，存档文件通常位于 `C:\Users¥<用户名>\AppData\Local\Pal\Saved\SaveGames<SteamID><世界文件夹>`
-- 对于Xbox Game Pass玩家的存档，存档文件通常位于 `C:\Users\<用户名>\AppData\Packages\ PocketpairInc.Palworld_ad4psfrxyesvt\SystemAppData\wgs`
-- 对于服务器存档，请通过 Steam 进入服务器的文件位置。
-- 你需要至少 3 个文件来完成转移：源玩家角色存档文件（在 Players/中），源世界的 level.sav 文件，以及目标世界的 Level.sav 文件
-- 对于本地合作模式的存档，如果你是主机，角色文件始终是 `000000...001.sav`
-- 对于其他玩家的存档，只需知道他们的 `ID` 在不同世界间不会改变，因此他们在你的合作世界和服务器世界的角色文件名是相同的。
+- Copy Player will transfers the character and all its pals on your team and in your inventory, items on the character, and progress. It does not transfer map objects, items in chests and pals working at your base. Move items into your inventory / pals into your team if you want to transfer them.
+- The save files are usually located at C:\Users<username>\AppData\Local\Pal\Saved\SaveGames<SteamID><Original Server Folder> for co-op saves.
+- For `Xbox Game Pass` Player, save files are usually located at `C:\Users\<User>\AppData\Packages\ PocketpairInc.Palworld_ad4psfrxyesvt\SystemAppData\wgs`
+- For server saves, go to the dedicated server's file location through steam.
+- u need at least 3 files to complete the transfer:
+	- The source player character save file in Players folder
+	- The source world's `Level.sav` file
+	- The target world's `Level.sav` file
+- For co-op saves, the player character save file is always `000000...001.sav`
+- For another server saves, their `ID` will not change between worlds, so that have the same name in target server, you only need the source world's `000000...000.sav`
 
-- 存档结构如下
-	- 源世界
+
+- Data Struct
+	- Source World
 	```
 	SaveGames
 	└── <steam-id>
@@ -231,7 +240,7 @@ options:
 	        │   └── 12345...6789.sav   <- character save-file we want to transfer
 	        └── WorldOption.sav
 	```
-	- 目标世界
+	- Target World
 	```
 	SaveGames
 	└── <steam-id>
@@ -245,19 +254,13 @@ options:
 	        └── WorldOption.sav
 	```
 
-
 ---
 
-## **TODO**
-	
-- [ ] Cleanup the data on `FoliageGridSaveDataMap`
-- [ ] Cleanup more deep data on  `MapObjectSpawnerInStageSaveData`
+## Acknowledgements
 
----
+Thanks to
 
-# 感谢
-
-- [palworld-save-tools](https://github.com/cheahjs/palworld-save-tools) 提供了存档解析工具实现
-- [PalEdit](https://github.com/EternalWraith/PalEdit) - 提供了帕鲁编辑器
-- [PalworldCharacterTransfer](https://github.com/jmkl009/PalworldCharacterTransfer) - 参考了其中的动态物品数据迁移引用概念
-- [Palworld Host Save Fix](https://github.com/xNul/palworld-host-save-fix) - 提供了最早期迁移玩家数据的概念
+- [palworld-save-tools](https://github.com/cheahjs/palworld-save-tools) for providing save file parsing tool implementation
+- [PalEdit](https://github.com/EternalWraith/PalEdit) - GUI for editing Pals
+- [PalworldCharacterTransfer](https://github.com/jmkl009/PalworldCharacterTransfer) - Idea for the Dynamic Item Data transfer
+- [Palworld Host Save Fix](https://github.com/xNul/palworld-host-save-fix) - Idea for the first to transfer between server
