@@ -14,6 +14,31 @@ Changelog
     Note that they these tags will not actually close the issue/PR until they
     are merged into the "default" branch.
 
+v0.4.3
+-------
+
+Fix:
+
+- Invalid character for opening cheated file
+
+v0.4.2
+-------
+
+Fix:
+
+- Bug for i18n for PalEdit
+
+v0.4.1
+-------
+
+Feature:
+
+- i18n For PalEdit
+
+Fix:
+
+- process for invalid player that use cheats
+
 v0.4.0
 -------
 
